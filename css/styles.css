@@ -1,7 +1,9 @@
 /* Tailwind CSS Directives */
+/* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
 
 /* ===========================
    Custom Keyframe Animations
