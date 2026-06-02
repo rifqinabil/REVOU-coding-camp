@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Muhammad Rifqi Nabil</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#hero" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">Rifqi Nabil</a>
+
+            <!-- Desktop Nav Links -->
+            <ul class="hidden md:flex gap-6 text-sm font-medium">
+                <li><a href="#hero" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Home</a></li>
+                <li><a href="#projects" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Projects</a></li>
+                <li><a href="#skills" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Skills</a></li>
+                <li><a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a></li>
+            </ul>
+
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" aria-label="Toggle dark mode"
+                    class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-lg">
+                    🌙
+                </button>
+
+                <!-- Hamburger Button -->
+                <button id="hamburger-btn" aria-label="Open menu"
+                    class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+            <ul class="flex flex-col px-4 py-3 gap-3 text-sm font-medium">
+                <li><a href="#hero" class="mobile-nav-link block hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Home</a></li>
+                <li><a href="#projects" class="mobile-nav-link block hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Projects</a></li>
+                <li><a href="#skills" class="mobile-nav-link block hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Skills</a></li>
+                <li><a href="#contact" class="mobile-nav-link block hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-16 px-4">
+        <div class="text-center max-w-2xl">
+            <h1 class="animate-fade-in text-4xl md:text-5xl font-bold mb-4">
+                Muhammad Rifqi Nabil
+            </h1>
+            <p id="tagline" class="animate-fade-in delay-200 text-xl md:text-2xl text-indigo-600 dark:text-indigo-400 mb-4 font-medium">
+                <!-- Typing effect will populate this -->
+            </p>
+            <p class="animate-fade-in delay-400 text-gray-600 dark:text-gray-300 mb-8 text-base leading-relaxed">
+                Seorang developer yang antusias membangun solusi web yang bersih, fungsional, dan accessible.
+            </p>
+            <a href="#contact"
+                class="animate-fade-in delay-600 inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-medium transition-colors shadow-md">
+                Hubungi Saya
+            </a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Proyek Saya</h2>
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project cards rendered by renderer.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Keahlian</h2>
+            <div id="skills-container">
+                <!-- Skills rendered by skills.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Hubungi Saya</h2>
+
+            <div id="form-success" class="hidden mb-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 rounded-lg text-center">
+                Pesan berhasil dikirim! Terima kasih, saya akan segera menghubungi Anda.
+            </div>
+
+            <form id="contact-form" novalidate class="flex flex-col gap-5">
+                <!-- Nama -->
+                <div class="form-field">
+                    <label for="nama" class="block text-sm font-medium mb-1">Nama</label>
+                    <input id="nama" name="nama" type="text" placeholder="Nama lengkap Anda"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors">
+                    <span id="error-nama" class="error-msg hidden text-red-500 text-sm mt-1 block"></span>
+                </div>
+
+                <!-- Email -->
+                <div class="form-field">
+                    <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                    <input id="email" name="email" type="email" placeholder="email@contoh.com"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors">
+                    <span id="error-email" class="error-msg hidden text-red-500 text-sm mt-1 block"></span>
+                </div>
+
+                <!-- Subjek -->
+                <div class="form-field">
+                    <label for="subjek" class="block text-sm font-medium mb-1">Subjek</label>
+                    <input id="subjek" name="subjek" type="text" placeholder="Subjek pesan"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors">
+                    <span id="error-subjek" class="error-msg hidden text-red-500 text-sm mt-1 block"></span>
+                </div>
+
+                <!-- Pesan -->
+                <div class="form-field">
+                    <label for="pesan" class="block text-sm font-medium mb-1">Pesan</label>
+                    <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..."
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors resize-none"></textarea>
+                    <span id="error-pesan" class="error-msg hidden text-red-500 text-sm mt-1 block"></span>
+                </div>
+
+                <button type="submit" id="submit-btn"
+                    class="bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-3 rounded-full font-medium transition-colors shadow-md self-start">
+                    Kirim Pesan
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+        <p>&copy; 2025 Muhammad Rifqi Nabil. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Modules -->
+    <script src="js/data.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/contact.js"></script>
+
+    <!-- Initialization -->
+    <script>
+        // applyStoredTheme is called first to prevent FOUC
+        if (typeof applyStoredTheme === 'function') applyStoredTheme();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof initNavbar === 'function')       initNavbar();
+            if (typeof renderProjects === 'function')   renderProjects('projects-container');
+            if (typeof initSkills === 'function')       initSkills('skills-container');
+            if (typeof initContactForm === 'function')  initContactForm();
+
+            // Typing effect on hero tagline
+            const tagline = document.getElementById('tagline');
+            if (tagline && typeof typeText === 'function') {
+                typeText(tagline, 'Frontend Developer & Problem Solver');
+            } else if (tagline) {
+                tagline.textContent = 'Frontend Developer & Problem Solver';
+            }
+        });
+    </script>
+</body>
+</html>

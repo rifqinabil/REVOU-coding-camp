@@ -1,0 +1,116 @@
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================
+   Custom Keyframe Animations
+   =========================== */
+
+/* fadeInUp — used for hero section stagger entrance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* typing cursor blink */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+/* progress bar fill animation */
+@keyframes fillBar {
+    from { width: 0%; }
+    to   { width: var(--target-width); }
+}
+
+/* ===========================
+   Animation Utility Classes
+   =========================== */
+
+.animate-fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0; /* start invisible; animation fills to 1 */
+}
+
+/* Stagger delay helpers */
+.delay-100  { animation-delay: 100ms; }
+.delay-200  { animation-delay: 200ms; }
+.delay-300  { animation-delay: 300ms; }
+.delay-400  { animation-delay: 400ms; }
+.delay-600  { animation-delay: 600ms; }
+.delay-800  { animation-delay: 800ms; }
+.delay-1000 { animation-delay: 1000ms; }
+
+/* Typing cursor */
+.typing-cursor::after {
+    content: '|';
+    animation: blink 0.8s step-start infinite;
+    margin-left: 1px;
+}
+
+/* ===========================
+   Progress Bar Styles
+   =========================== */
+
+.progress-bar-track {
+    background-color: #e5e7eb; /* gray-200 */
+    border-radius: 9999px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.dark .progress-bar-track {
+    background-color: #374151; /* gray-700 */
+}
+
+.progress-bar-fill {
+    height: 100%;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6); /* indigo → violet */
+    width: 0%;
+    transition: width 0.8s ease-out;
+}
+
+/* ===========================
+   Skill Badge
+   =========================== */
+
+.skill-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: #e0e7ff; /* indigo-100 */
+    color: #3730a3;             /* indigo-800 */
+}
+
+.dark .skill-badge {
+    background-color: #3730a3; /* indigo-800 */
+    color: #e0e7ff;             /* indigo-100 */
+}
+
+/* ===========================
+   Scrollbar (optional polish)
+   =========================== */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a5b4fc; /* indigo-300 */
+    border-radius: 9999px;
+}

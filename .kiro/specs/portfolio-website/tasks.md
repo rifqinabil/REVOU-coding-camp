@@ -6,7 +6,7 @@ Implementasi website portofolio personal dengan HTML5, Tailwind CSS, dan Vanilla
 
 ## Tasks
 
-- [ ] 1. Setup struktur proyek dan file dasar
+- [x] 1. Setup struktur proyek dan file dasar
   - Buat direktori `js/`, `css/`, dan `assets/images/`
   - Buat file `index.html` dengan boilerplate HTML5, link ke Tailwind CDN, dan placeholder section (`#hero`, `#projects`, `#skills`, `#contact`)
   - Buat file `css/styles.css` dengan Tailwind directives dan custom `@keyframes` (`fadeInUp`, typing effect, stagger delay classes)
@@ -15,22 +15,22 @@ Implementasi website portofolio personal dengan HTML5, Tailwind CSS, dan Vanilla
   - Buat konfigurasi Vitest/Jest dengan environment `jsdom`
   - _Requirements: 1.1, 2.1, 3.1, 4.1, 5.1, 6.1_
 
-- [ ] 2. Implementasi Data Layer (`js/data.js`)
-  - [ ] 2.1 Tulis `PROJECT_DATA` array dengan minimal 2 contoh objek (termasuk satu dengan `liveUrl: null` dan satu dengan `repoUrl: null`)
+- [x] 2. Implementasi Data Layer (`js/data.js`)
+  - [x] 2.1 Tulis `PROJECT_DATA` array dengan minimal 2 contoh objek (termasuk satu dengan `liveUrl: null` dan satu dengan `repoUrl: null`)
     - Setiap objek memiliki properti: `title`, `description`, `technologies`, `liveUrl`, `repoUrl`
     - _Requirements: 3.1_
-  - [ ] 2.2 Tulis `SKILLS_DATA` array dengan minimal 6 objek skill yang dikelompokkan dalam kategori Frontend, Backend, dan Tools
+  - [x] 2.2 Tulis `SKILLS_DATA` array dengan minimal 6 objek skill yang dikelompokkan dalam kategori Frontend, Backend, dan Tools
     - Setiap objek memiliki properti: `name`, `level` (0–100), `category`
     - _Requirements: 4.1, 4.3, 4.5_
 
 - [ ] 3. Implementasi Theme Module (`js/theme.js`)
-  - [ ] 3.1 Implementasi `applyStoredTheme()` — baca `localStorage['theme']`, terapkan class `dark` pada `<html>`, fallback ke `'light'` jika tidak ada nilai tersimpan; gunakan `try/catch` untuk antisipasi private browsing
+  - [x] 3.1 Implementasi `applyStoredTheme()` — baca `localStorage['theme']`, terapkan class `dark` pada `<html>`, fallback ke `'light'` jika tidak ada nilai tersimpan; gunakan `try/catch` untuk antisipasi private browsing
     - _Requirements: 6.3, 6.5, 6.6_
-  - [ ] 3.2 Implementasi `getCurrentTheme()` — kembalikan nilai tema aktif berdasarkan ada/tidaknya class `dark` pada `<html>`
+  - [x] 3.2 Implementasi `getCurrentTheme()` — kembalikan nilai tema aktif berdasarkan ada/tidaknya class `dark` pada `<html>`
     - _Requirements: 6.2_
   - [ ] 3.3 Implementasi `updateToggleIcon(theme)` — tampilkan ikon `☀️` saat dark mode aktif, `🌙` saat light mode aktif
     - _Requirements: 6.7, 6.8_
-  - [ ] 3.4 Implementasi `toggleTheme()` — switch tema, simpan ke `localStorage`, panggil `updateToggleIcon()`
+  - [-] 3.4 Implementasi `toggleTheme()` — switch tema, simpan ke `localStorage`, panggil `updateToggleIcon()`
     - _Requirements: 6.2, 6.4_
   - [ ]* 3.5 Tulis unit tests untuk `theme.js`
     - Verifikasi `applyStoredTheme()` menerapkan class `dark` saat `localStorage.theme = 'dark'`
@@ -44,13 +44,13 @@ Implementasi website portofolio personal dengan HTML5, Tailwind CSS, dan Vanilla
     - Verifikasi toggle mengubah tema ke nilai berlawanan, menulis ke localStorage, menerapkan class CSS yang benar, dan menampilkan ikon yang benar
 
 - [ ] 4. Implementasi Navbar Module (`js/navbar.js`)
-  - [ ] 4.1 Implementasi `scrollToSection(targetId)` — gunakan feature detection `scrollBehavior` untuk smooth scroll, fallback ke `scrollIntoView()` biasa
+  - [-] 4.1 Implementasi `scrollToSection(targetId)` — gunakan feature detection `scrollBehavior` untuk smooth scroll, fallback ke `scrollIntoView()` biasa
     - _Requirements: 1.6, 1.7_
-  - [ ] 4.2 Implementasi `toggleMobileMenu()` — tambah/hapus class `hidden` pada container menu mobile
+  - [-] 4.2 Implementasi `toggleMobileMenu()` — tambah/hapus class `hidden` pada container menu mobile
     - _Requirements: 1.3, 1.4_
-  - [ ] 4.3 Implementasi `closeMobileMenu()` — selalu set menu ke state hidden
+  - [-] 4.3 Implementasi `closeMobileMenu()` — selalu set menu ke state hidden
     - _Requirements: 1.5_
-  - [ ] 4.4 Implementasi `initNavbar()` — bind event listener pada hamburger button, semua nav links untuk smooth scroll, dan nav links mobile untuk close menu + scroll
+  - [-] 4.4 Implementasi `initNavbar()` — bind event listener pada hamburger button, semua nav links untuk smooth scroll, dan nav links mobile untuk close menu + scroll
     - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_
   - [ ]* 4.5 Tulis unit tests untuk `navbar.js`
     - Verifikasi `toggleMobileMenu()` menambah class `hidden` saat open dan menghapusnya saat closed
@@ -64,14 +64,14 @@ Implementasi website portofolio personal dengan HTML5, Tailwind CSS, dan Vanilla
     - Gunakan `fc.boolean()` untuk initial state
     - Verifikasi toggle dua kali mengembalikan ke state semula
 
-- [ ] 5. Checkpoint — Pastikan semua tests modul theme dan navbar lulus
+- [~] 5. Checkpoint — Pastikan semua tests modul theme dan navbar lulus
   - Jalankan test suite, pastikan semua tests lulus. Tanyakan ke user jika ada pertanyaan.
 
 - [ ] 6. Implementasi Project Renderer (`js/renderer.js`)
-  - [ ] 6.1 Implementasi `createProjectCard(project)` — kembalikan HTML string lengkap untuk satu project card; sembunyikan tautan `liveUrl` jika null/kosong, sembunyikan tautan `repoUrl` jika null/kosong; tampilkan setiap teknologi sebagai Skill_Badge
+  - [~] 6.1 Implementasi `createProjectCard(project)` — kembalikan HTML string lengkap untuk satu project card; sembunyikan tautan `liveUrl` jika null/kosong, sembunyikan tautan `repoUrl` jika null/kosong; tampilkan setiap teknologi sebagai Skill_Badge
     - Guard check: validasi properti wajib ada sebelum render
     - _Requirements: 3.3, 3.4, 3.5, 3.6_
-  - [ ] 6.2 Implementasi `renderProjects(containerId)` — baca `PROJECT_DATA`, iterasi array, panggil `createProjectCard()` untuk tiap item, sisipkan ke container DOM; guard check jika `PROJECT_DATA` tidak terdefinisi atau container tidak ditemukan
+  - [~] 6.2 Implementasi `renderProjects(containerId)` — baca `PROJECT_DATA`, iterasi array, panggil `createProjectCard()` untuk tiap item, sisipkan ke container DOM; guard check jika `PROJECT_DATA` tidak terdefinisi atau container tidak ditemukan
     - _Requirements: 3.1, 3.2_
   - [ ]* 6.3 Tulis unit tests untuk `renderer.js`
     - Verifikasi render dengan array kosong menghasilkan container kosong
@@ -91,11 +91,11 @@ Implementasi website portofolio personal dengan HTML5, Tailwind CSS, dan Vanilla
     - Verifikasi null/empty URL tidak menghasilkan elemen link di card
 
 - [ ] 7. Implementasi Skills Section (`js/skills.js`)
-  - [ ] 7.1 Implementasi render skills berdasarkan `SKILLS_DATA` — kelompokkan berdasarkan `category`, render setiap skill sebagai Skill_Badge atau Progress_Bar dengan `data-level` attribute
+  - [~] 7.1 Implementasi render skills berdasarkan `SKILLS_DATA` — kelompokkan berdasarkan `category`, render setiap skill sebagai Skill_Badge atau Progress_Bar dengan `data-level` attribute
     - _Requirements: 4.1, 4.2, 4.3, 4.5_
-  - [ ] 7.2 Implementasi `animateProgressBar(barElement, targetPercent)` — animasikan width dari 0 ke `targetPercent` menggunakan CSS transition atau `requestAnimationFrame`
+  - [~] 7.2 Implementasi `animateProgressBar(barElement, targetPercent)` — animasikan width dari 0 ke `targetPercent` menggunakan CSS transition atau `requestAnimationFrame`
     - _Requirements: 4.4_
-  - [ ] 7.3 Implementasi `initSkills(containerId)` — render skills ke container, setup `IntersectionObserver` untuk trigger `animateProgressBar()` saat section masuk viewport; fallback: langsung set width ke target jika `IntersectionObserver` tidak didukung
+  - [~] 7.3 Implementasi `initSkills(containerId)` — render skills ke container, setup `IntersectionObserver` untuk trigger `animateProgressBar()` saat section masuk viewport; fallback: langsung set width ke target jika `IntersectionObserver` tidak didukung
     - _Requirements: 4.4_
   - [ ]* 7.4 Tulis property test untuk Progress Bar Values In Range (Property 4)
     - **Property 4: Progress Bar Values Are In Range**
@@ -104,13 +104,13 @@ Implementasi website portofolio personal dengan HTML5, Tailwind CSS, dan Vanilla
     - Verifikasi width yang dihasilkan progress bar selalu dalam rentang [0, 100]
 
 - [ ] 8. Implementasi Contact Form (`js/contact.js`)
-  - [ ] 8.1 Implementasi `isValidEmail(email)` — return `true` jika string mengandung `@` dan domain part yang valid (minimal satu karakter setelah `@` diikuti `.` dan TLD)
+  - [~] 8.1 Implementasi `isValidEmail(email)` — return `true` jika string mengandung `@` dan domain part yang valid (minimal satu karakter setelah `@` diikuti `.` dan TLD)
     - _Requirements: 5.4_
-  - [ ] 8.2 Implementasi `showError(fieldId, message)` dan `clearError(fieldId)` — tampilkan/sembunyikan elemen error sibling dengan mengelola class `hidden` dan `textContent`
+  - [~] 8.2 Implementasi `showError(fieldId, message)` dan `clearError(fieldId)` — tampilkan/sembunyikan elemen error sibling dengan mengelola class `hidden` dan `textContent`
     - _Requirements: 5.3, 5.4, 5.5, 5.6_
-  - [ ] 8.3 Implementasi `validateForm(formData)` — periksa semua field (nama, email, subjek, pesan); kembalikan `{ isValid, errors }` dengan pesan error spesifik per field sesuai requirements
+  - [~] 8.3 Implementasi `validateForm(formData)` — periksa semua field (nama, email, subjek, pesan); kembalikan `{ isValid, errors }` dengan pesan error spesifik per field sesuai requirements
     - _Requirements: 5.2, 5.3, 5.4, 5.5, 5.6_
-  - [ ] 8.4 Implementasi `initContactForm()` — bind submit handler (disable tombol, validasi, tampilkan errors atau success + reset, enable tombol kembali); bind `input` event pada setiap field untuk `clearError()`
+  - [~] 8.4 Implementasi `initContactForm()` — bind submit handler (disable tombol, validasi, tampilkan errors atau success + reset, enable tombol kembali); bind `input` event pada setiap field untuk `clearError()`
     - _Requirements: 5.2, 5.7, 5.8, 5.9_
   - [ ]* 8.5 Tulis unit tests untuk `contact.js`
     - Verifikasi tombol submit ter-disable saat validasi dimulai dan ter-enable setelah selesai
@@ -138,20 +138,20 @@ Implementasi website portofolio personal dengan HTML5, Tailwind CSS, dan Vanilla
     - Gunakan `fc.record` dengan semua field valid (non-empty string + valid email)
     - Verifikasi submit handler menampilkan pesan sukses dan mereset semua field ke string kosong
 
-- [ ] 9. Checkpoint — Pastikan semua tests modul renderer, skills, dan contact lulus
+- [~] 9. Checkpoint — Pastikan semua tests modul renderer, skills, dan contact lulus
   - Jalankan test suite, pastikan semua tests lulus. Tanyakan ke user jika ada pertanyaan.
 
 - [ ] 10. Wiring: Markup HTML dan Integrasi Semua Modul di `index.html`
-  - [ ] 10.1 Tulis markup lengkap `index.html` — Navbar dengan hamburger button dan theme toggle, Hero section dengan elemen yang memakai classes animasi (`animate-fade-in`, `delay-200`, dll.), Projects section dengan container `#projects`, Skills section dengan container `#skills`, Contact section dengan form `#contact-form` dan error elements
+  - [~] 10.1 Tulis markup lengkap `index.html` — Navbar dengan hamburger button dan theme toggle, Hero section dengan elemen yang memakai classes animasi (`animate-fade-in`, `delay-200`, dll.), Projects section dengan container `#projects`, Skills section dengan container `#skills`, Contact section dengan form `#contact-form` dan error elements
     - _Requirements: 1.1, 1.2, 1.6, 2.1, 2.2, 2.3, 2.4, 2.5, 5.1_
-  - [ ] 10.2 Tambahkan script tags di akhir `<body>` — muat `data.js`, `navbar.js`, `renderer.js`, `skills.js`, `contact.js`, `theme.js`; tambahkan inline script untuk inisialisasi semua modul saat `DOMContentLoaded` dengan urutan: `applyStoredTheme()` pertama, lalu modul lainnya
+  - [~] 10.2 Tambahkan script tags di akhir `<body>` — muat `data.js`, `navbar.js`, `renderer.js`, `skills.js`, `contact.js`, `theme.js`; tambahkan inline script untuk inisialisasi semua modul saat `DOMContentLoaded` dengan urutan: `applyStoredTheme()` pertama, lalu modul lainnya
     - _Requirements: 6.5_
-  - [ ] 10.3 Tambahkan dark mode classes pada semua komponen HTML — gunakan Tailwind `dark:` variant untuk navbar, hero, project cards, skills section, contact form, dan background utama
+  - [~] 10.3 Tambahkan dark mode classes pada semua komponen HTML — gunakan Tailwind `dark:` variant untuk navbar, hero, project cards, skills section, contact form, dan background utama
     - _Requirements: 6.3_
-  - [ ] 10.4 Implementasi typing effect di Hero section — tambahkan `typeText()` helper di file terpisah atau inline; panggil saat `DOMContentLoaded` pada elemen tagline
+  - [~] 10.4 Implementasi typing effect di Hero section — tambahkan `typeText()` helper di file terpisah atau inline; panggil saat `DOMContentLoaded` pada elemen tagline
     - _Requirements: 2.4_
 
-- [ ] 11. Final Checkpoint — Pastikan semua tests lulus dan website fungsional
+- [~] 11. Final Checkpoint — Pastikan semua tests lulus dan website fungsional
   - Jalankan seluruh test suite (`vitest --run` atau `jest`), pastikan semua tests lulus. Lakukan review manual pada navbar mobile toggle, dark mode persistence, project cards rendering, skills animation, dan form validation. Tanyakan ke user jika ada pertanyaan.
 
 ## Notes
